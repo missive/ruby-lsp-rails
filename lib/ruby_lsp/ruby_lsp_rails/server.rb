@@ -287,7 +287,7 @@ module RubyLsp
         # multiple times within the same process. To avoid any memory bloat, we run migrations in a separate process
         stdout, status = Open3.capture2(
           { "VERBOSE" => "true" },
-          "bundle exec rails db:migrate",
+          "bin/dev rails db:migrate",
         )
 
         { message: stdout, status: status.exitstatus }
